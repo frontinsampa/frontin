@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Script src="https://www.googletagmanager.com/gtag/js?id=<%= GOOGLE_UA %>" />
-      <Script>
+      <Script id='google-tag-manager-script'>
         {`window.dataLayer = window.dataLayer || [];
               function gtag() {dataLayer.push(arguments); }
               gtag('js', new Date());
@@ -17,7 +17,7 @@ export default function Home() {
       <div className={styles.container}>
         <Head>
           <title>FRONTIN</title>
-          <meta http-equiv="refresh" content="3;URL='https://conteudo.frontinsampa.com.br/2022'" />
+          <meta httpEquiv="refresh" content="3;URL='https://conteudo.frontinsampa.com.br/2022'" />
           <link rel="icon" href="/favicon.ico" />
           <meta charset="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
