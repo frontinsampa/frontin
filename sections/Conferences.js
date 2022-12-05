@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useAsync } from 'react-async-hook';
 import Image from 'next/image';
-import { PrismicRichText } from '@prismicio/react';
+import { PrismicRichText, PrismicImage } from '@prismicio/react';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import 'dayjs/locale/pt-br';
@@ -140,13 +140,16 @@ export default function Conferences() {
                     {dayjs(new Date(details.date)).format('D MMMM')}
                   </span>
 
-                  <div classname="relative">
+                  <div className="relative">
                     {details.image?.main?.url && (
-                      <Image
-                        src={details.image.main.url}
-                        alt={details.image.main.alt}
-                        width={details.image.main.dimensions.width}
-                        height={details.image.main.dimensions.height}
+                      <PrismicImage
+                        field={details.image.main}
+                        widths={[
+                          264,
+                          528,
+                          792,
+                         ]}
+                        pixelDensities="defaults"
                         className="
                           border-2
                           border-black
@@ -155,6 +158,9 @@ export default function Conferences() {
                           hover:translate-x-2
                           hover:-translate-y-2
                           transition-transform
+                          w-full
+                          h-full
+                          object-cover
                         "
                       />
                     )}

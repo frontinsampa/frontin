@@ -71,7 +71,10 @@ export default function Home(props) {
             lg:mb-0
             lg:mx-0
           ">
-            <LogoExtended />
+            <LogoExtended className="
+              w-full
+              md:w-[383px]
+            " />
           </div>
 
           <div className="
@@ -84,7 +87,8 @@ export default function Home(props) {
                 heading2: ({ text }) => (
                   <h2 className="
                     font-heading
-                    text-4xl
+                    lg:text-4xl
+                    text-3xl
                     mb-0
                   ">
                     <span

@@ -20,6 +20,14 @@ module.exports = {
       white: '#FFFFFF',
       black: '#202020',
     },
+    container: {
+      padding: {
+        DEFAULT: '2rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+      },
+    },
     extend: {},
   },
   plugins: [require("@tailwindcss/aspect-ratio")],

@@ -65,6 +65,7 @@ export default function Sponsors() {
 
               <div className="
                 lg:border-l-2
+                lg:border-gray
                 lg:pl-12
               ">
                 <span className="

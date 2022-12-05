@@ -10,8 +10,6 @@ export const Footer = ({ settings }) => {
     email,
   } = settings.data;
 
-  console.log(settings);
-
   return (
     <footer
       className="

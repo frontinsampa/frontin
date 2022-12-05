@@ -30,7 +30,10 @@ export const Layout = ({
         bg-black
         text-white
       ">
-        <div className="container mx-auto">
+        <div className="
+          container
+          mx-auto
+        ">
           {/* <Header
             alternateLanguages={alternateLanguages}
             navigation={navigation}

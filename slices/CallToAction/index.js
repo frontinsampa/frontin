@@ -13,8 +13,6 @@ export default function CallToAction({ slice }) {
     items,
   } = slice;
 
-  console.log(items)
-
   return (
     <Section>
       <PrismicRichText
