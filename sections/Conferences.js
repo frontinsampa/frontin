@@ -158,11 +158,11 @@ export default function Conferences() {
                     "
                   >
                     {details.date_defined && (
-                      dayjs(new Date(details.date)).format('D MMMM')
+                      dayjs(details.date).format('D MMMM')
                     )}
 
                     {!details.date_defined && (
-                      dayjs(new Date(details.date)).format('MMMM')
+                      dayjs(details.date).format('MMMM')
                     )}
                   </span>
 
