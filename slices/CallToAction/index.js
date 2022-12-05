@@ -33,36 +33,42 @@ export default function CallToAction({ slice }) {
           grid
           grid-cols-1
           lg:grid-cols-4
+          space-between
+          gap-8
         "
       >
         {items?.map((item, i) => (
-          <div key={i}>
-            <PrismicRichText
-              field={item.title}
-              // components={{
-              //   heading2: ({ children }) => (
-              //     <h2 className="text-3xl">
-              //       {children}
-              //     </h2>
-              //   )
-              // }}
-            />
+          <div
+            key={i}
+            className="
+              grid
+              auto-cols-auto
+            "
+          >
+            <div className="mb-4">
+              <PrismicRichText
+                field={item.title}
+                // components={{
+                //   heading3: ({ children }) => (
+                //     <h3>
+                //       {children}
+                //     </h3>
+                //   ),
+                // }}
+              />
 
-            <PrismicRichText
-              field={item.content}
-              // components={{
-              //   heading2: ({ children }) => (
-              //     <h2 className="text-3xl">
-              //       {children}
-              //     </h2>
-              //   )
-              // }}
-            />
+              <PrismicRichText
+                field={item.content}
+              />
+            </div>
 
             <Button
               href={item.link.url}
               target={item.link.target}
-              className="w-full"
+              className="
+                w-full
+                self-end
+              "
             >
               <PrismicRichText
                 field={item.link_label}
