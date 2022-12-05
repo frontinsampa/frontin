@@ -32,6 +32,15 @@ export default function Image(props) {
         className={className}
       />
 
+      <span className="
+        hidden
+      bg-white
+      bg-green
+        bg-red
+        bg-blue
+        bg-pink
+      " />
+
       <span className={clsx(
         'absolute',
         'top-0',

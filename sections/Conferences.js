@@ -170,7 +170,7 @@ export default function Conferences() {
                       528,
                       792,
                      ]}
-                    color="yellow"
+                    color={details.theme.toLowerCase()}
                   />
                 </div>
 

@@ -42,10 +42,12 @@ export default function Sponsors() {
             gap-12
           ">
             <div>
-              <Image
-                field={details.logo.highlight}
-                color="pink"
-              />
+              <div className="sticky top-4">
+                <Image
+                  field={details.logo.highlight}
+                  color="pink"
+                />
+              </div>
             </div>
 
             <div>
