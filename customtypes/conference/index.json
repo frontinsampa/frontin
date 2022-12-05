@@ -44,6 +44,15 @@
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
+      "date_defined": {
+        "type": "Boolean",
+        "config": {
+          "label": "Date defined",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      },
       "date": {
         "type": "Date",
         "config": {
@@ -58,6 +67,38 @@
           "placeholder": "",
           "allowTargetBlank": false,
           "select": null
+        }
+      },
+      "theme": {
+        "type": "Select",
+        "config": {
+          "label": "Theme",
+          "placeholder": "",
+          "options": [
+            "Red",
+            "Pink",
+            "Blue",
+            "Green",
+            "Yellow",
+            "White"
+          ],
+          "default_value": "Red"
+        }
+      },
+      "available": {
+        "type": "Boolean",
+        "config": {
+          "label": "Available",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
         }
       }
     }

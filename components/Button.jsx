@@ -7,7 +7,10 @@ export default function Button(props) {
     children,
     target,
     className: inheritedClassName,
+    disabled: inheritedDisabled,
   } = props;
+
+  const disabled = inheritedDisabled || !href;
 
   const className = clsx(
     'bg-blue',
@@ -21,7 +24,11 @@ export default function Button(props) {
     'text-center',
     'uppercase',
     'transition',
-    inheritedClassName
+    inheritedClassName,
+    {
+      'pointer-events-none': disabled,
+      'bg-gray': disabled,
+    },
   );
 
   if (href) {
@@ -40,6 +47,7 @@ export default function Button(props) {
     <button
       type={type}
       className={className}
+      disabled
     >
       {children}
     </button>

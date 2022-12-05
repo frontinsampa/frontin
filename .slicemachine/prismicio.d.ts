@@ -42,6 +42,18 @@ interface ConferenceDocumentData {
      */
     description: prismicT.RichTextField;
     /**
+     * Date defined field in *Conference*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: conference.date_defined
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    date_defined: prismicT.BooleanField;
+    /**
      * Date field in *Conference*
      *
      * - **Field Type**: Date
@@ -63,7 +75,47 @@ interface ConferenceDocumentData {
      *
      */
     subscribe: prismicT.LinkField;
+    /**
+     * Theme field in *Conference*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **Default Value**: Red
+     * - **API ID Path**: conference.theme
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    theme: prismicT.SelectField<"Red" | "Pink" | "Blue" | "Green" | "Yellow" | "White", "filled">;
+    /**
+     * Available field in *Conference*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: conference.available
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    available: prismicT.BooleanField;
+    /**
+     * Slice Zone field in *Conference*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: conference.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<ConferenceDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *Conference → Slice Zone*
+ *
+ */
+type ConferenceDocumentDataSlicesSlice = never;
 /**
  * Conference document from Prismic
  *
@@ -577,6 +629,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ConferenceDocumentData, ConferenceDocument, HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, SponsorDocumentData, SponsorDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefaultItem, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, RelationshipSliceDefaultPrimary, RelationshipSliceDefault, RelationshipSliceVariation, RelationshipSlice };
+        export type { ConferenceDocumentData, ConferenceDocumentDataSlicesSlice, ConferenceDocument, HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, SponsorDocumentData, SponsorDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefaultItem, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, RelationshipSliceDefaultPrimary, RelationshipSliceDefault, RelationshipSliceVariation, RelationshipSlice };
     }
 }

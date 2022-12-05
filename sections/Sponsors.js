@@ -1,8 +1,8 @@
 import { useAsync } from 'react-async-hook';
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
-import Image from 'next/image';;
 
 import { getListByType } from '../services/pages';
+import Image from '../components/Image';
 
 export default function Sponsors() {
   const getList = useAsync(async () => {
@@ -43,20 +43,8 @@ export default function Sponsors() {
           ">
             <div>
               <Image
-                src={details.logo.highlight.url}
-                alt={details.logo.highlight.alt}
-                width={details.logo.highlight.dimensions.width}
-                height={details.logo.highlight.dimensions.height}
-                className="
-                  border-2
-                  border-black
-                  z-[1]
-                  hover:translate-x-2
-                  hover:-translate-y-2
-                  transition-transform
-                  sticky
-                  top-0
-                "
+                field={details.logo.highlight}
+                color="pink"
               />
             </div>
 

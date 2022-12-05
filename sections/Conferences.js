@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useAsync } from 'react-async-hook';
-import Image from 'next/image';
 import { PrismicRichText, PrismicImage } from '@prismicio/react';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
@@ -8,6 +7,7 @@ import 'dayjs/locale/pt-br';
 
 import { getListByType } from '../services/pages';
 import Button from '../components/Button';
+import Image from '../components/Image';
 
 /**
  * @todo move all dayjs to another file as helper function
@@ -21,7 +21,22 @@ const CUSTOM_TYPE = 'conference';
 export default function Conferences() {
   const getList = useAsync(async () => {
     const page = await getListByType(CUSTOM_TYPE);
-    const data = page.filter(({ data }) => new Date(data.date) > new Date());
+    const data = page
+      .filter(({ data }) => new Date(data.date) > new Date())
+      .sort((a, b) => {
+        const dateA = new Date(a.data.date);
+        const dateB = new Date(b.data.date);
+
+        if(dateA < dateB) {
+          return -1;
+        }
+
+        if (dateA > dateB) {
+          return 1;
+        }
+
+        return 0;
+      });
 
     return data;
   });
@@ -39,6 +54,8 @@ export default function Conferences() {
 
   const list = Object.values(groupListResultByYear);
   const years = Object.keys(groupListResultByYear);
+
+  console.log(list)
 
   return (
     <div className="relative">
@@ -137,56 +154,45 @@ export default function Conferences() {
                       uppercase
                     "
                   >
-                    {dayjs(new Date(details.date)).format('D MMMM')}
+                    {details.date_defined && (
+                      dayjs(new Date(details.date)).format('D MMMM')
+                    )}
+
+                    {!details.date_defined && (
+                      dayjs(new Date(details.date)).format('MMMM')
+                    )}
                   </span>
 
-                  <div className="relative">
-                    {details.image?.main?.url && (
-                      <PrismicImage
-                        field={details.image.main}
-                        widths={[
-                          264,
-                          528,
-                          792,
-                         ]}
-                        pixelDensities="defaults"
-                        className="
-                          border-2
-                          border-black
-                          relative
-                          z-[1]
-                          hover:translate-x-2
-                          hover:-translate-y-2
-                          transition-transform
-                          w-full
-                          h-full
-                          object-cover
-                        "
-                      />
-                    )}
-
-                    {!details.image?.main?.url && (
-                      <img src="https://via.placeholder.com/264x195" />
-                    )}
-
-                    <span className="
-                      absolute
-                      top-0
-                      left-0
-                      w-full
-                      h-full
-                      bg-red
-                    " />
-                  </div>
+                  <Image
+                    field={details.image.main}
+                    widths={[
+                      264,
+                      528,
+                      792,
+                     ]}
+                    color="yellow"
+                  />
                 </div>
 
-                <Button
-                  href={details.subscribe.url}
-                  target="_blank"
-                  className="w-[264px]"
-                >
-                  Inscreva-se
-                </Button>
+                {details.available && (
+                  <Button
+                    href={details.subscribe.url}
+                    target="_blank"
+                    className="w-[264px]"
+                  >
+                    Inscreva-se
+                  </Button>
+                )}
+
+                {!details.available && (
+                  <Button
+                    className="
+                      w-[264px]
+                    "
+                  >
+                    Em breve
+                  </Button>
+                )}
               </div>
             ))}
           </div>
