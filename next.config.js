@@ -2,7 +2,6 @@ const prismic = require("@prismicio/client");
 
 const sm = require("./sm.json");
 
-/** @type {import('next').NextConfig} */
 const nextConfig = async () => {
   const client = prismic.createClient(sm.apiEndpoint);
 
@@ -12,13 +11,27 @@ const nextConfig = async () => {
   return {
     reactStrictMode: true,
     i18n: {
-      // These are all the locales you want to support in
-      // your application
       locales,
-      // This is the default locale you want to be used when visiting
-      // a non-locale prefixed path e.g. `/hello`
       defaultLocale: locales[0],
     },
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'images.prismic.io',
+          port: '',
+          pathname: '/frontin/**',
+        },
+      ],
+    },
+    webpack(config) {
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: ["@svgr/webpack"]
+      });
+
+      return config;
+    }
   };
 };
 

@@ -26,22 +26,50 @@
         }
       }
     },
-    "settings": {
-      "newsletterDescription": {
+    "settings": {},
+    "home": {
+      "content": {
         "config": {
           "patternType": "PARAGRAPH",
           "blocks": 1
         }
       },
-      "newsletterDisclaimer": {
-        "config": {
-          "patternType": "PARAGRAPH",
-          "blocks": 1
-        }
-      },
-      "siteTitle": {
+      "title": {
         "config": {
           "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    },
+    "sponsors": {},
+    "conferences": {},
+    "conference": {
+      "description": {
+        "config": {
+          "patternType": "STORY",
+          "blocks": 1
+        }
+      },
+      "name": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    },
+    "sponsor": {
+      "name": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "logo": {
+        "content": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
+      },
+      "description": {
+        "config": {
+          "patternType": "STORY",
           "blocks": 1
         }
       }
@@ -130,6 +158,113 @@
       },
       "withButton": {
         "primary": {}
+      }
+    },
+    "Conferences": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "Sponsors": {
+      "default": {
+        "items": {
+          "name": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Sections": {
+      "default": {
+        "items": {},
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "content": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Section": {
+      "default": {
+        "items": {},
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "content": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Relationship": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "CallToAction": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "content": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "content": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
       }
     }
   }

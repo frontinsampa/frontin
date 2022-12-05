@@ -1,4 +1,5 @@
-@import "flag-icons/css/flag-icons.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import 'flag-icons/css/flag-icons.css';
 
 @tailwind base;
 @tailwind components;
@@ -8,4 +9,32 @@
 [data-collapsible="true"].bg-slate-100
   + [data-collapsible="true"].bg-slate-100 {
   @apply pt-0 md:pt-0;
+}
+
+@layer base {
+  html {
+    font-family: Roboto, system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+    @apply uppercase;
+    @apply mb-2;
+    @apply font-semibold;
+  }
+
+  h1 {
+    @apply text-4xl;
+    @apply mb-4;
+  }
+
+  h2 {
+    @apply text-2xl;
+    @apply mb-3;
+  }
 }

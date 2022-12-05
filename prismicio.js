@@ -19,15 +19,11 @@ export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
  * @type {prismicH.LinkResolverFunction}
  */
 export const linkResolver = (doc) => {
-  if (doc.type === "page") {
-    if (doc.uid === "home") {
-      return "/";
-    } else {
-      return `/${doc.uid}`;
-    }
+  if (doc.uid === "home") {
+    return "/";
+  } else {
+    return `/${doc.uid}`;
   }
-
-  return "/";
 };
 
 /**

@@ -1,8 +1,24 @@
 module.exports = {
-  content: ["./pages/**/*.js", "./components/**/*.js", "./slices/**/*.js"],
+  content: [
+    "./pages/**/*.js*",
+    "./components/**/*.js*",
+    "./slices/**/*.js*",
+    './sections/**/*.js*',
+  ],
   theme: {
     fontFamily: {
-      sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+      heading: ['"Roboto Slab"', 'Roboto'],
+      body: ['Roboto'],
+    },
+    colors: {
+      red: '#FF685C',
+      pink: '#DA83F6',
+      yellow: '#FBC54C',
+      green: '#7BE473',
+      blue: '#58A9F3',
+      gray: '#404040',
+      white: '#FFFFFF',
+      black: '#202020',
     },
     extend: {},
   },

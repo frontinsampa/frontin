@@ -1,12 +1,18 @@
-import Head from "next/head";
-import { SliceZone } from "@prismicio/react";
-import * as prismicH from "@prismicio/helpers";
+import Head from 'next/head';
+import { SliceZone } from '@prismicio/react';
+import * as prismicH from '@prismicio/helpers';
 
-import { createClient } from "../prismicio";
-import { components } from "../slices";
-import { Layout } from "../components/Layout";
+import { createClient } from '../prismicio';
+import { components } from '../slices';
+import { Layout } from '../components/Layout';
 
-const Page = ({ page, navigation, settings }) => {
+const Page = (props) => {
+  const {
+    page,
+    navigation,
+    settings,
+  } = props;
+
   return (
     <Layout
       alternateLanguages={page.alternate_languages}
@@ -19,7 +25,11 @@ const Page = ({ page, navigation, settings }) => {
           {prismicH.asText(settings.data.siteTitle)}
         </title>
       </Head>
-      <SliceZone slices={page.data.slices} components={components} />
+
+      <SliceZone
+        slices={page.data.slices}
+        components={components}
+      />
     </Layout>
   );
 };
@@ -55,5 +65,6 @@ export async function getStaticPaths() {
       };
     }),
     fallback: false,
+
   };
 }
