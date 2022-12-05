@@ -64,7 +64,8 @@ export default function Conferences() {
           key={i}
           className="
             grid
-            grid-cols-[1fr,_128px]
+            lg:grid-cols-[1fr,_128px]
+            grid-cols-[1fr,_58px]
             items-end
             relative
             mb-[80px]
@@ -83,7 +84,8 @@ export default function Conferences() {
                 top-0
                 block
                 before:block
-                before:h-[285px]
+                lg:before:h-[285px]
+                before:h-[48px]
                 before:w-full
               "
             >
@@ -97,7 +99,8 @@ export default function Conferences() {
                   font-heading
                   uppercase
                   translate-x-full
-                  text-9xl
+                  lg:text-9xl
+                  text-5xl
                   font-semibold
                   text-gray
                 "
