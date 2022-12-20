@@ -16,6 +16,12 @@
           "patternType": "HEADING",
           "blocks": 1
         }
+      },
+      "content": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
       }
     },
     "article": {
@@ -26,7 +32,11 @@
         }
       }
     },
-    "settings": {},
+    "settings": {
+      "logo_full": {
+        "content": "https://images.unsplash.com/photo-1585399000684-d2f72660f092"
+      }
+    },
     "home": {
       "content": {
         "config": {
@@ -265,6 +275,44 @@
             }
           }
         }
+      }
+    },
+    "Faq": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "content": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "content": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Social": {
+      "default": {
+        "primary": {},
+        "items": {}
       }
     }
   }

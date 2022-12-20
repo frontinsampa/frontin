@@ -4,7 +4,7 @@
   "repeatable": false,
   "status": true,
   "json": {
-    "Main": {
+    "Data": {
       "title": {
         "type": "Text",
         "config": {
@@ -38,6 +38,38 @@
         "config": {
           "label": "E-mail",
           "placeholder": ""
+        }
+      }
+    },
+    "SEO": {},
+    "Customization": {
+      "logo_full": {
+        "type": "Image",
+        "config": {
+          "label": "Logo Full",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "logo_short": {
+        "type": "Image",
+        "config": {
+          "label": "Logo Short",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    },
+    "Social": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "social": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     }

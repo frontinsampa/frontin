@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { SliceZone, PrismicRichText } from '@prismicio/react';
 import Typed from 'typed.js';
+import { PrismicNextImage } from "@prismicio/next";
 
 import { createClient } from '../prismicio';
 import { components } from '../slices';
 import { Layout } from '../components/Layout';
-import LogoExtended from '../components/LogoExtended.svg';
 
 export default function Home(props) {
   const {
@@ -52,6 +52,7 @@ export default function Home(props) {
       title={title}
       metaDescription={data?.meta_description}
       metaKeywords={data?.meta_keywords}
+      header={false}
     >
       <div className="
         lg:h-[800px]
@@ -71,10 +72,14 @@ export default function Home(props) {
             lg:mb-0
             lg:mx-0
           ">
-            <LogoExtended className="
-              w-full
+          <PrismicNextImage
+            field={settings.logo_full}
+            width={383}
+            className="
               md:w-[383px]
-            " />
+              w-full
+            "
+          />
           </div>
 
           <div className="
@@ -111,19 +116,28 @@ export default function Home(props) {
   );
 }
 
-export async function getStaticProps({ params, locale, previewData }) {
+export async function getStaticProps(props) {
+  const {
+    locale: lang,
+    previewData
+  } = props;
+
   const client = createClient({ previewData });
 
-  const lang = 'pt-br';
+  const page = await client.getSingle(
+    'home',
+    { lang: 'pt-br' },
+  );
 
-  const page = await client.getByUID('home', 'home', { lang });
-  const settings = await client.getSingle('settings', { lang });
+  const settings = await client.getSingle(
+    'settings',
+    { lang: 'pt-br' },
+  );
 
   return {
     props: {
       page,
-      settings,
+      settings: settings.data,
     },
-    revalidate: 1
   };
 }

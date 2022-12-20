@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useAsync } from 'react-async-hook';
-import { PrismicRichText, PrismicImage } from '@prismicio/react';
+import { PrismicRichText } from '@prismicio/react';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import 'dayjs/locale/pt-br';
@@ -14,7 +14,6 @@ import Image from '../components/Image';
  */
 dayjs.extend(localizedFormat);
 dayjs.locale('pt-br')
-
 
 const CUSTOM_TYPE = 'conference';
 
@@ -54,8 +53,6 @@ export default function Conferences() {
 
   const list = Object.values(groupListResultByYear);
   const years = Object.keys(groupListResultByYear);
-
-  console.log(list)
 
   return (
     <div className="relative">
@@ -168,11 +165,6 @@ export default function Conferences() {
 
                   <Image
                     field={details.image.main}
-                    widths={[
-                      264,
-                      528,
-                      792,
-                     ]}
                     color={details.theme.toLowerCase()}
                   />
                 </div>

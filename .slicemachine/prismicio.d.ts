@@ -194,6 +194,18 @@ interface HomeDocumentData {
      *
      */
     slices: prismicT.SliceZone<HomeDocumentDataSlicesSlice>;
+    /**
+     * Navigation field in *Home*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: home.navigation
+     * - **Tab**: Customization
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    navigation: prismicT.BooleanField;
 }
 /**
  * Slice for *Home → Slice Zone*
@@ -274,6 +286,17 @@ interface PageDocumentData {
      */
     title: prismicT.TitleField;
     /**
+     * Content field in *Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.content
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    content: prismicT.RichTextField;
+    /**
      * Slice Zone field in *Page*
      *
      * - **Field Type**: Slice Zone
@@ -289,7 +312,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeroSlice | ImageSlice | TextWithFeaturesSlice | TextWithImageSlice | ConferencesSlice;
+type PageDocumentDataSlicesSlice = FaqSlice;
 /**
  * Page document from Prismic
  *
@@ -308,7 +331,7 @@ interface SettingsDocumentData {
      * - **Field Type**: Text
      * - **Placeholder**: *None*
      * - **API ID Path**: settings.title
-     * - **Tab**: Main
+     * - **Tab**: Data
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
@@ -319,7 +342,7 @@ interface SettingsDocumentData {
      * - **Field Type**: Text
      * - **Placeholder**: *None*
      * - **API ID Path**: settings.description
-     * - **Tab**: Main
+     * - **Tab**: Data
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
@@ -330,7 +353,7 @@ interface SettingsDocumentData {
      * - **Field Type**: Text
      * - **Placeholder**: *None*
      * - **API ID Path**: settings.corporate_name
-     * - **Tab**: Main
+     * - **Tab**: Data
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
@@ -341,7 +364,7 @@ interface SettingsDocumentData {
      * - **Field Type**: Text
      * - **Placeholder**: *None*
      * - **API ID Path**: settings.cnpj
-     * - **Tab**: Main
+     * - **Tab**: Data
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
@@ -352,12 +375,50 @@ interface SettingsDocumentData {
      * - **Field Type**: Text
      * - **Placeholder**: *None*
      * - **API ID Path**: settings.email
-     * - **Tab**: Main
+     * - **Tab**: Data
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
     email: prismicT.KeyTextField;
+    /**
+     * Logo Full field in *Settings*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.logo_full
+     * - **Tab**: Customization
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo_full: prismicT.ImageField<never>;
+    /**
+     * Logo Short field in *Settings*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.logo_short
+     * - **Tab**: Customization
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo_short: prismicT.ImageField<never>;
+    /**
+     * Slice Zone field in *Settings*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.slices[]
+     * - **Tab**: Social
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<SettingsDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *Settings → Slice Zone*
+ *
+ */
+type SettingsDocumentDataSlicesSlice = SocialSlice;
 /**
  * Settings document from Prismic
  *
@@ -566,6 +627,81 @@ type CallToActionSliceVariation = CallToActionSliceDefault;
  */
 export type CallToActionSlice = prismicT.SharedSlice<"call_to_action", CallToActionSliceVariation>;
 /**
+ * Primary content in Faq → Primary
+ *
+ */
+interface FaqSliceDefaultPrimary {
+    /**
+     * Title field in *Faq → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: faq.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Content field in *Faq → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: faq.primary.content
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    content: prismicT.RichTextField;
+}
+/**
+ * Item in Faq → Items
+ *
+ */
+export interface FaqSliceDefaultItem {
+    /**
+     * Title field in *Faq → Items*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: faq.items[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Content field in *Faq → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: faq.items[].content
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    content: prismicT.RichTextField;
+}
+/**
+ * Default variation for Faq Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Faq`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FaqSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FaqSliceDefaultPrimary>, Simplify<FaqSliceDefaultItem>>;
+/**
+ * Slice variation for *Faq*
+ *
+ */
+type FaqSliceVariation = FaqSliceDefault;
+/**
+ * Faq Shared Slice
+ *
+ * - **API ID**: `faq`
+ * - **Description**: `Faq`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FaqSlice = prismicT.SharedSlice<"faq", FaqSliceVariation>;
+/**
  * Primary content in Relationship → Primary
  *
  */
@@ -624,11 +760,101 @@ type RelationshipSliceVariation = RelationshipSliceDefault;
  *
  */
 export type RelationshipSlice = prismicT.SharedSlice<"relationship", RelationshipSliceVariation>;
+/**
+ * Item in Social → Items
+ *
+ */
+export interface SocialSliceDefaultItem {
+    /**
+     * Name field in *Social → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: social.items[].name
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    name: prismicT.KeyTextField;
+    /**
+     * Description field in *Social → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: social.items[].sr_description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    sr_description: prismicT.KeyTextField;
+    /**
+     * Icon Light field in *Social → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: social.items[].icon_light
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    icon_light: prismicT.ImageField<never>;
+    /**
+     * Logo Dark field in *Social → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: social.items[].logo_dark
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo_dark: prismicT.ImageField<"small">;
+    /**
+     * Link field in *Social → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: social.items[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
+    /**
+     * Visibility field in *Social → Items*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: true
+     * - **API ID Path**: social.items[].active
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    active: prismicT.BooleanField;
+}
+/**
+ * Default variation for Social Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Social`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SocialSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<SocialSliceDefaultItem>>;
+/**
+ * Slice variation for *Social*
+ *
+ */
+type SocialSliceVariation = SocialSliceDefault;
+/**
+ * Social Shared Slice
+ *
+ * - **API ID**: `social`
+ * - **Description**: `Social`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SocialSlice = prismicT.SharedSlice<"social", SocialSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ConferenceDocumentData, ConferenceDocumentDataSlicesSlice, ConferenceDocument, HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, SponsorDocumentData, SponsorDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefaultItem, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, RelationshipSliceDefaultPrimary, RelationshipSliceDefault, RelationshipSliceVariation, RelationshipSlice };
+        export type { ConferenceDocumentData, ConferenceDocumentDataSlicesSlice, ConferenceDocument, HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataSlicesSlice, SettingsDocument, SponsorDocumentData, SponsorDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefaultItem, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, FaqSliceDefaultPrimary, FaqSliceDefaultItem, FaqSliceDefault, FaqSliceVariation, FaqSlice, RelationshipSliceDefaultPrimary, RelationshipSliceDefault, RelationshipSliceVariation, RelationshipSlice, SocialSliceDefaultItem, SocialSliceDefault, SocialSliceVariation, SocialSlice };
     }
 }

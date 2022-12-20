@@ -42,7 +42,10 @@ export default function Sponsors() {
             gap-12
           ">
             <div>
-              <div className="sticky top-4">
+              <div className="
+                sticky
+                top-4
+              ">
                 <Image
                   field={details.logo.highlight}
                   color="pink"
@@ -92,7 +95,7 @@ export default function Sponsors() {
                           "
                         />
 
-                        <style jsx>{`
+                        <style jsx="true">{`
                           iframe {
                             width: 100%;
                             height: 100%;

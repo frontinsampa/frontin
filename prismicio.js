@@ -21,8 +21,10 @@ export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 export const linkResolver = (doc) => {
   if (doc.uid === "home") {
     return "/";
-  } else {
+  } else if (doc.type === "page") {
     return `/${doc.uid}`;
+  } else {
+    return "/";
   }
 };
 

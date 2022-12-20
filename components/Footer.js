@@ -1,14 +1,9 @@
-import { PrismicLink, PrismicRichText, PrismicText } from "@prismicio/react";
-import * as prismicH from "@prismicio/helpers";
-
-import { Bounded } from "./Bounded";
-
 export const Footer = ({ settings }) => {
   const {
     cnpj,
     corporate_name: corporateName,
     email,
-  } = settings.data;
+  } = settings;
 
   return (
     <footer

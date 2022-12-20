@@ -1,13 +1,15 @@
 import clsx from 'clsx';
 import { PrismicImage } from '@prismicio/react';
+import { PrismicNextImage } from '@prismicio/next';
 
 export default function Image(props) {
   const {
     field,
-    widths = [],
     className: inheritedClassName,
     color = 'red',
   } = props;
+
+  const { alt } = field;
 
   const className = clsx(
     'border-2',
@@ -24,21 +26,25 @@ export default function Image(props) {
   );
 
   return (
-    <div className="relative">
-      <PrismicImage
+    <div className={`
+      relative
+    `}>
+      <PrismicNextImage
         field={field}
-        widths={widths}
-        pixelDensities="defaults"
         className={className}
+        alt={alt}
+        imgixParams={{
+          fit: 'fill'
+        }}
       />
 
       <span className="
         hidden
       bg-white
       bg-green
-        bg-red
-        bg-blue
-        bg-pink
+      bg-red
+      bg-blue
+      bg-pink
       " />
 
       <span className={clsx(

@@ -1,33 +1,37 @@
 import Head from 'next/head';
 import { SliceZone } from '@prismicio/react';
 import * as prismicH from '@prismicio/helpers';
+import { PrismicRichText } from '@prismicio/react';
 
 import { createClient } from '../prismicio';
 import { components } from '../slices';
 import { Layout } from '../components/Layout';
+import { Header } from '../components/Header';
 
 const Page = (props) => {
   const {
-    page,
-    navigation,
+    page: {
+      data: {
+        title,
+        content,
+        slices,
+      },
+      alternate_languages: languages,
+    },
     settings,
   } = props;
 
   return (
     <Layout
-      alternateLanguages={page.alternate_languages}
-      navigation={navigation}
       settings={settings}
+      languages={languages}
+      title={title}
     >
-      <Head>
-        <title>
-          {prismicH.asText(page.data.title)} |{" "}
-          {prismicH.asText(settings.data.siteTitle)}
-        </title>
-      </Head>
+      <PrismicRichText field={title} />
+      <PrismicRichText field={content} />
 
       <SliceZone
-        slices={page.data.slices}
+        slices={slices}
         components={components}
       />
     </Layout>
@@ -36,18 +40,30 @@ const Page = (props) => {
 
 export default Page;
 
-export async function getStaticProps({ params, locale, previewData }) {
+export async function getStaticProps(props) {
+  const {
+    params,
+    locale: lang,
+    previewData
+  } = props;
+
   const client = createClient({ previewData });
 
-  const page = await client.getByUID("page", params.uid, { lang: locale });
-  const navigation = await client.getSingle("navigation", { lang: locale });
-  const settings = await client.getSingle("settings", { lang: locale });
+  const page = await client.getByUID(
+    'page',
+    params.uid,
+    { lang },
+  );
+
+  const settings = await client.getSingle(
+    'settings',
+    { lang },
+  );
 
   return {
     props: {
       page,
-      navigation,
-      settings,
+      settings: settings.data,
     },
   };
 }

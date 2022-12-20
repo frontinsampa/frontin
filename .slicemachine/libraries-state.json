@@ -137,6 +137,114 @@
         },
         "screenshotPaths": {}
       },
+      "faq": {
+        "library": "slices",
+        "id": "faq",
+        "name": "Faq",
+        "description": "Faq",
+        "model": {
+          "id": "faq",
+          "type": "SharedSlice",
+          "name": "Faq",
+          "description": "Faq",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Faq",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "",
+                    "allowTargetBlank": false,
+                    "single": "heading2"
+                  }
+                },
+                "content": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Content",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "",
+                    "allowTargetBlank": false,
+                    "single": "heading3"
+                  }
+                },
+                "content": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Content",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "title": [
+                  {
+                    "type": "heading3",
+                    "text": "Observe",
+                    "spans": []
+                  }
+                ],
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "text": "Excepteur nostrud ipsum minim nulla aliqua dolor. Laboris ullamco pariatur cillum ad commodo nostrud nostrud cillum non do cupidatat. Consequat laborum tempor quis anim.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading2",
+                  "text": "Became",
+                  "spans": []
+                }
+              ],
+              "content": [
+                {
+                  "type": "paragraph",
+                  "text": "Cupidatat ea sint proident aliquip duis voluptate commodo. Velit cillum ut aliquip eu est aliquip reprehenderit velit anim consequat excepteur esse.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "faq"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
       "relationship": {
         "library": "slices",
         "id": "relationship",
@@ -215,6 +323,135 @@
               "type": "Sponsors"
             },
             "slice_type": "relationship"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "social": {
+        "library": "slices",
+        "id": "social",
+        "name": "Social",
+        "description": "Social",
+        "model": {
+          "id": "social",
+          "type": "SharedSlice",
+          "name": "Social",
+          "description": "Social",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Social",
+              "primary": {},
+              "items": {
+                "name": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Name",
+                    "placeholder": ""
+                  }
+                },
+                "sr_description": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Description",
+                    "placeholder": ""
+                  }
+                },
+                "icon_light": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Icon Light",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "logo_dark": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Logo Dark",
+                    "constraint": {},
+                    "thumbnails": [
+                      {
+                        "name": "small",
+                        "width": 32,
+                        "height": 32
+                      }
+                    ]
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "active": {
+                  "type": "Boolean",
+                  "config": {
+                    "label": "Visibility",
+                    "placeholder_false": "Hide",
+                    "placeholder_true": "Show",
+                    "default_value": true
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "name": "learn",
+                "sr_description": "finger",
+                "icon_light": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e"
+                },
+                "logo_dark": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+                  "small": {
+                    "dimensions": {
+                      "width": 32,
+                      "height": 32
+                    },
+                    "alt": null,
+                    "copyright": null,
+                    "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
+                  }
+                },
+                "link": {
+                  "link_type": "Web",
+                  "url": "http://twitter.com"
+                },
+                "active": false
+              }
+            ],
+            "primary": {},
+            "slice_type": "social"
           }
         },
         "meta": {
