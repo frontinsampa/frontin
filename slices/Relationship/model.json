@@ -34,10 +34,7 @@
           "config": {
             "label": "Type",
             "placeholder": "",
-            "options": [
-              "Conferences",
-              "Sponsors"
-            ]
+            "options": ["Conferences", "Sponsors", "Partner"]
           }
         }
       },

@@ -3,14 +3,12 @@
   "label": "Conference",
   "repeatable": true,
   "status": true,
+  "format": "page",
   "json": {
     "Main": {
       "uid": {
         "type": "UID",
-        "config": {
-          "label": "Slug",
-          "placeholder": ""
-        }
+        "config": { "label": "Slug", "placeholder": "" }
       },
       "name": {
         "type": "StructuredText",
@@ -26,13 +24,7 @@
         "config": {
           "label": "Image",
           "constraint": {},
-          "thumbnails": [
-            {
-              "name": "main",
-              "width": 264,
-              "height": 195
-            }
-          ]
+          "thumbnails": [{ "name": "main", "width": 264, "height": 195 }]
         }
       },
       "description": {
@@ -55,10 +47,7 @@
       },
       "date": {
         "type": "Date",
-        "config": {
-          "label": "Date",
-          "placeholder": ""
-        }
+        "config": { "label": "Date", "placeholder": "" }
       },
       "subscribe": {
         "type": "Link",
@@ -74,14 +63,7 @@
         "config": {
           "label": "Theme",
           "placeholder": "",
-          "options": [
-            "Red",
-            "Pink",
-            "Blue",
-            "Green",
-            "Yellow",
-            "White"
-          ],
+          "options": ["Red", "Pink", "Blue", "Green", "Yellow", "White"],
           "default_value": "Red"
         }
       },
@@ -97,9 +79,7 @@
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
-        "config": {
-          "choices": {}
-        }
+        "config": { "choices": {} }
       }
     }
   }

@@ -337,6 +337,105 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
+type PartnerDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Partner documents
+ */
+interface PartnerDocumentData {
+  /**
+   * Name field in *Partner*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partner.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * Link field in *Partner*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partner.link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Logo field in *Partner*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partner.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *Partner*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partner.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PartnerDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *Partner*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: partner.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Partner*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partner.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Partner*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: partner.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Partner document from Prismic
+ *
+ * - **API ID**: `partner`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PartnerDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PartnerDocumentData>,
+    "partner",
+    Lang
+  >;
+
 /**
  * Item in *Settings → Social*
  */
@@ -606,6 +705,7 @@ export type AllDocumentTypes =
   | HomeDocument
   | NavigationDocument
   | PageDocument
+  | PartnerDocument
   | SettingsDocument
   | SponsorDocument;
 
@@ -818,7 +918,7 @@ export interface RelationshipSliceDefaultPrimary {
    * - **API ID Path**: relationship.primary.type
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  type: prismic.SelectField<"Conferences" | "Sponsors">;
+  type: prismic.SelectField<"Conferences" | "Sponsors" | "Partner">;
 }
 
 /**
@@ -942,6 +1042,8 @@ declare module "@prismicio/client" {
       NavigationDocumentData,
       PageDocument,
       PageDocumentData,
+      PartnerDocument,
+      PartnerDocumentData,
       SettingsDocument,
       SettingsDocumentData,
       SponsorDocument,

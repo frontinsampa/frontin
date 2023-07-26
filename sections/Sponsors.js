@@ -31,7 +31,7 @@ export default function Sponsors() {
     ...sponsorships
   } = groupBySponsorshipType || { platinum: [] };
   const sponsorshipsList = Object.values(sponsorships).flat();
-  console.log(sponsorshipsList)
+
   return (
     <div>
 
@@ -139,6 +139,7 @@ export default function Sponsors() {
                   field={details.logo}
                   color="blue"
                   fill
+                  alt={details.name}
                   className={`
                     w-[100px]
                     h-[100px]

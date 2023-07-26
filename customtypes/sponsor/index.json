@@ -3,14 +3,12 @@
   "label": "Sponsor",
   "repeatable": true,
   "status": true,
+  "format": "page",
   "json": {
     "Main": {
       "uid": {
         "type": "UID",
-        "config": {
-          "label": "Slug",
-          "placeholder": ""
-        }
+        "config": { "label": "Slug", "placeholder": "" }
       },
       "name": {
         "type": "StructuredText",
@@ -45,52 +43,30 @@
           "label": "Logo",
           "constraint": {},
           "thumbnails": [
-            {
-              "name": "highlight",
-              "width": 470,
-              "height": 280
-            },
-            {
-              "name": "small",
-              "width": 167,
-              "height": 110
-            }
+            { "name": "highlight", "width": 470, "height": 280 },
+            { "name": "small", "width": 167, "height": 110 }
           ]
         }
       },
       "date_start": {
         "type": "Date",
-        "config": {
-          "label": "Start",
-          "placeholder": ""
-        }
+        "config": { "label": "Start", "placeholder": "" }
       },
       "date_end": {
         "type": "Date",
-        "config": {
-          "label": "End",
-          "placeholder": ""
-        }
+        "config": { "label": "End", "placeholder": "" }
       },
       "sponsorship_type": {
         "type": "Select",
         "config": {
           "label": "Type",
           "placeholder": "",
-          "options": [
-            "Platinum",
-            "Gold",
-            "Silver",
-            "Bronze"
-          ]
+          "options": ["Platinum", "Gold", "Silver", "Bronze"]
         }
       },
       "highlight_video": {
         "type": "Embed",
-        "config": {
-          "label": "Highlight",
-          "placeholder": ""
-        }
+        "config": { "label": "Highlight", "placeholder": "" }
       }
     }
   }
