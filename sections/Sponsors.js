@@ -127,6 +127,7 @@ export default function Sponsors() {
         <div
           className={`
             flex
+            flex-wrap
             gap-4
           `}
         >

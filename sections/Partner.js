@@ -23,6 +23,7 @@ export default function Partner() {
       <div
         className={`
           flex
+          flex-wrap
           gap-4
         `}
       >
