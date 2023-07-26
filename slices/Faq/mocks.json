@@ -1,0 +1,65 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading2",
+            "content": {
+              "text": "Cattle"
+            }
+          }
+        ]
+      },
+      "content": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Duis aliqua occaecat aute eiusmod minim eiusmod deserunt consequat ad sit mollit. Laborum nostrud anim non enim qui laboris ut voluptate ipsum deserunt. Incididunt non id amet laborum amet veniam fugiat excepteur est id deserunt commodo sunt."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "title",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading3",
+                  "content": {
+                    "text": "Unusual"
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "content",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Elit ipsum eiusmod in id in consectetur magna enim ex fugiat ut velit dolore labore. Elit fugiat ad aliquip officia dolor dolore incididunt consectetur qui deserunt labore ad."
+                  }
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

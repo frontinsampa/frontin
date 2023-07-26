@@ -1,0 +1,204 @@
+[
+  {
+    "uid": {
+      "__TYPE__": "UIDContent",
+      "value": "realize"
+    },
+    "meta_description": {
+      "__TYPE__": "FieldContent",
+      "value": "author",
+      "type": "Text"
+    },
+    "meta_keywords": {
+      "__TYPE__": "FieldContent",
+      "value": "gulf",
+      "type": "Text"
+    },
+    "title": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "heading1",
+          "content": {
+            "text": "Energy"
+          }
+        }
+      ]
+    },
+    "content": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Sit nisi nulla aliquip laborum consequat cillum dolor dolor consequat non duis deserunt. Ullamco consequat reprehenderit sit qui do culpa amet non pariatur nisi adipisicing quis ipsum. Incididunt tempor qui amet."
+          }
+        }
+      ]
+    },
+    "logo": {
+      "__TYPE__": "ImageContent",
+      "origin": {
+        "id": "main",
+        "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
+        "width": 3935,
+        "height": 5894
+      },
+      "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
+      "width": 3935,
+      "height": 5894,
+      "edit": {
+        "zoom": 1,
+        "crop": {
+          "x": 0,
+          "y": 0
+        },
+        "background": "transparent"
+      },
+      "thumbnails": {}
+    },
+    "slices": {
+      "__TYPE__": "SliceContentType",
+      "value": [
+        {
+          "key": "call_to_action$28c86e3e-5612-40e4-803a-0707749defd2",
+          "name": "call_to_action",
+          "widget": {
+            "__TYPE__": "SharedSliceContent",
+            "variation": "default",
+            "primary": {
+              "title": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "heading2",
+                    "content": {
+                      "text": "Public"
+                    }
+                  }
+                ]
+              },
+              "content": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "Ut enim in excepteur esse adipisicing veniam minim elit in fugiat deserunt. Aute aute sit pariatur minim sunt nulla incididunt ea adipisicing anim fugiat id do."
+                    }
+                  }
+                ]
+              }
+            },
+            "items": [
+              {
+                "__TYPE__": "GroupItemContent",
+                "value": [
+                  [
+                    "title",
+                    {
+                      "__TYPE__": "StructuredTextContent",
+                      "value": [
+                        {
+                          "type": "heading3",
+                          "content": {
+                            "text": "Afraid"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    "content",
+                    {
+                      "__TYPE__": "StructuredTextContent",
+                      "value": [
+                        {
+                          "type": "paragraph",
+                          "content": {
+                            "text": "Culpa eu dolor ea pariatur proident velit magna irure ea et."
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    "link_label",
+                    {
+                      "__TYPE__": "StructuredTextContent",
+                      "value": [
+                        {
+                          "type": "paragraph",
+                          "content": {
+                            "text": "Culpa irure exercitation dolor velit elit laboris cupidatat adipisicing dolore aute aute id qui. Quis reprehenderit cillum elit officia officia ullamco cillum nisi eiusmod excepteur esse."
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    "link",
+                    {
+                      "__TYPE__": "LinkContent",
+                      "value": {
+                        "__TYPE__": "ExternalLink",
+                        "url": "http://twitter.com"
+                      }
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "key": "relationship$62b69639-6b29-403f-984a-4e9b3b14a76f",
+          "name": "relationship",
+          "widget": {
+            "__TYPE__": "SharedSliceContent",
+            "variation": "default",
+            "primary": {
+              "title": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "heading2",
+                    "content": {
+                      "text": "Stopped"
+                    }
+                  }
+                ]
+              },
+              "content": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "Tempor excepteur exercitation aliquip velit non deserunt mollit exercitation. Nulla sit non do est. Anim ea ipsum aute qui anim id nulla cupidatat."
+                    }
+                  }
+                ]
+              },
+              "type": {
+                "__TYPE__": "FieldContent",
+                "value": "Sponsors",
+                "type": "Select"
+              }
+            },
+            "items": [
+              {
+                "__TYPE__": "GroupItemContent",
+                "value": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "navigation": {
+      "__TYPE__": "BooleanContent",
+      "value": false
+    }
+  }
+]

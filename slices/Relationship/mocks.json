@@ -1,0 +1,41 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading2",
+            "content": {
+              "text": "Outside"
+            }
+          }
+        ]
+      },
+      "content": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Eu incididunt quis aliqua Lorem non magna elit laboris est id. Laboris ipsum esse magna sit occaecat esse veniam do. Ut ex amet cupidatat officia sunt consequat esse magna ipsum elit non do ex."
+            }
+          }
+        ]
+      },
+      "type": {
+        "__TYPE__": "FieldContent",
+        "value": "Conferences",
+        "type": "Select"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

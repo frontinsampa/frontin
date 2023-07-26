@@ -1,9 +1,9 @@
 const prismic = require("@prismicio/client");
 
-const sm = require("./sm.json");
+const { apiEndpoint } = require('./slicemachine.config.json');
 
 const nextConfig = async () => {
-  const client = prismic.createClient(sm.apiEndpoint);
+  const client = prismic.createClient(apiEndpoint);
 
   const repository = await client.getRepository();
   const locales = repository.languages.map((lang) => lang.id);

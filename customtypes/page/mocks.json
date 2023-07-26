@@ -1,0 +1,102 @@
+[
+  {
+    "uid": {
+      "__TYPE__": "UIDContent",
+      "value": "separate"
+    },
+    "title": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "heading1",
+          "content": {
+            "text": "Chamber"
+          }
+        }
+      ]
+    },
+    "content": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Quis in eiusmod ex ullamco et ex laboris elit dolor et."
+          }
+        }
+      ]
+    },
+    "slices": {
+      "__TYPE__": "SliceContentType",
+      "value": [
+        {
+          "key": "faq$dcf4df2a-a32c-4a0c-9005-5757684e8896",
+          "name": "faq",
+          "widget": {
+            "__TYPE__": "SharedSliceContent",
+            "variation": "default",
+            "primary": {
+              "title": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "heading2",
+                    "content": {
+                      "text": "Pupil"
+                    }
+                  }
+                ]
+              },
+              "content": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "Nisi consequat aute officia cillum exercitation eu duis."
+                    }
+                  }
+                ]
+              }
+            },
+            "items": [
+              {
+                "__TYPE__": "GroupItemContent",
+                "value": [
+                  [
+                    "title",
+                    {
+                      "__TYPE__": "StructuredTextContent",
+                      "value": [
+                        {
+                          "type": "heading3",
+                          "content": {
+                            "text": "Tobacco"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    "content",
+                    {
+                      "__TYPE__": "StructuredTextContent",
+                      "value": [
+                        {
+                          "type": "paragraph",
+                          "content": {
+                            "text": "Voluptate ad dolor sint laboris ullamco qui non quis."
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

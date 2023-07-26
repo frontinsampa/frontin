@@ -2,12 +2,12 @@ import * as prismic from "@prismicio/client";
 import * as prismicH from "@prismicio/helpers";
 import * as prismicNext from "@prismicio/next";
 
-import sm from "./sm.json";
+import { apiEndpoint } from './slicemachine.config.json';
 
 /**
  * The project's Prismic repository name.
  */
-export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
+export const repositoryName = prismic.getRepositoryName(apiEndpoint);
 /**
  * The project's Prismic Link Resolver. This function determines the URL for a
  * given Prismic document.
