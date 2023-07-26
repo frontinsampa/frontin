@@ -1,42 +1,56 @@
 import clsx from 'clsx';
-import { PrismicImage } from '@prismicio/react';
 import { PrismicNextImage } from '@prismicio/next';
 
 export default function Image(props) {
   const {
     field,
-    className: inheritedClassName,
+    className,
     color = 'red',
+    fill,
   } = props;
 
   const { alt } = field;
 
-  const className = clsx(
-    'border-2',
-    'border-black',
-    'relative',
-    'z-[1]',
-    'hover:translate-x-2',
-    'hover:-translate-y-2',
-    'transition-transform',
-    'w-full',
-    'h-full',
-    // 'object-cover',
-    inheritedClassName
-  );
-
   return (
-    <div className={`
-      relative
-    `}>
-      <PrismicNextImage
-        field={field}
-        className={className}
-        alt={alt}
-        imgixParams={{
-          fit: 'fill'
-        }}
-      />
+    <div
+      className={clsx(
+        `
+          relative
+        `,
+        className,
+      )}
+    >
+      <div
+        className={clsx(
+          `
+          bg-white
+            h-full
+            w-full
+            flex
+            justify-center
+            items-center
+            relative
+            z-[1]
+            border-2
+          border-black
+            transition-transform
+            hover:translate-x-2
+            hover:-translate-y-2
+          `,
+          { 'px-2': fill },
+        )}
+      >
+        <PrismicNextImage
+          field={field}
+          className={`
+            object-contain
+          `}
+          alt={alt}
+          imgixParams={{
+            fit: 'fill'
+          }}
+        />
+      </div>
 
       <span className="
         hidden

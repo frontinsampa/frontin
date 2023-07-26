@@ -18,6 +18,8 @@ export default function Relationship({ slice }) {
     { suspense: true, ssr: true },
   );
 
+  console.log(content)
+
   return (
     <Section>
       <PrismicRichText

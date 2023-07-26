@@ -1,29 +1,56 @@
+import SocialLink from './SocialLink';
+
 export const Footer = ({ settings }) => {
   const {
     cnpj,
     corporate_name: corporateName,
-    email,
   } = settings;
 
   return (
     <footer
-      className="
+      className={`
+        grid
+        gap-4
+        lg:grid-cols-[1fr,auto]
         py-8
-        text-xs
-        text-right
-      "
+      `}
     >
-      <span className="block">
-        {corporateName}
-      </span>
+      <div>
+        <span
+          className={`
+            block
+            text-sm
+          `}
+        >
+          {corporateName}
+        </span>
 
-      <span className="block">
-        {cnpj}
-      </span>
+        <span
+          className={`
+            block
+            text-sm
+          `}
+        >
+          {cnpj}
+        </span>
+      </div>
 
-      <span className="block">
-        {email}
-      </span>
+      <div>
+        {settings?.social && (
+          <ul
+            className={`
+              flex
+              gap-2
+            `}
+          >
+            {settings.social.map((social, i) => (
+              <li key={i}>
+                <SocialLink {...social} />
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </footer>
   );
 };

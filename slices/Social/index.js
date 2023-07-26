@@ -1,22 +1,33 @@
-import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
+import React from 'react';
+import Link from '../../components/Link';
 
 export default function Social({ slice }) {
+  const list = slice.items;
+
+  if (!list) {
+    return null;
+  }
+
   return (
-    <section>
-      <span className="title">
-        {
-          slice.primary.title ?
-          <PrismicRichText field={slice.primary.title}/>
-          : <h2>Template slice, update me!</h2>
-        }
-      </span>
-      {
-        slice.primary.description ?
-        <PrismicRichText field={slice.primary.description}/>
-        : <p>start by editing this slice from inside Slice Machine!</p>
-      }
-      <style jsx>{`
+    <>
+      <ul>
+        {list.map((item, i) => (
+          <li key={i}>
+            <Link
+              link={item.link}
+              target="_blank"
+              title={item.label}
+              aria-label={item.a11y}
+            >
+              <span className="sr-only">
+                {item.label}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      {/* <style jsx>{`
           section {
             max-width: 600px;
             margin: 4em auto;
@@ -25,7 +36,7 @@ export default function Social({ slice }) {
           .title {
             color: #8592e0;
           }
-      `}</style>
-    </section>
+      `}</style> */}
+    </>
   );
 }

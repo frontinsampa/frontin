@@ -3,71 +3,67 @@
   "label": "Settings",
   "repeatable": false,
   "status": true,
+  "format": "custom",
   "json": {
     "Data": {
       "title": {
         "type": "Text",
-        "config": {
-          "label": "Title",
-          "placeholder": ""
-        }
+        "config": { "label": "Title", "placeholder": "" }
       },
       "description": {
         "type": "Text",
-        "config": {
-          "label": "Description",
-          "placeholder": ""
-        }
+        "config": { "label": "Description", "placeholder": "" }
       },
       "corporate_name": {
         "type": "Text",
-        "config": {
-          "label": "Corporate name",
-          "placeholder": ""
-        }
+        "config": { "label": "Corporate name", "placeholder": "" }
       },
       "cnpj": {
         "type": "Text",
-        "config": {
-          "label": "CNPJ",
-          "placeholder": ""
-        }
+        "config": { "label": "CNPJ", "placeholder": "" }
       },
       "email": {
         "type": "Text",
-        "config": {
-          "label": "E-mail",
-          "placeholder": ""
-        }
+        "config": { "label": "E-mail", "placeholder": "" }
       }
     },
     "SEO": {},
     "Customization": {
       "logo_full": {
         "type": "Image",
-        "config": {
-          "label": "Logo Full",
-          "constraint": {},
-          "thumbnails": []
-        }
+        "config": { "label": "Logo Full", "constraint": {}, "thumbnails": [] }
       },
       "logo_short": {
         "type": "Image",
-        "config": {
-          "label": "Logo Short",
-          "constraint": {},
-          "thumbnails": []
-        }
+        "config": { "label": "Logo Short", "constraint": {}, "thumbnails": [] }
       }
     },
     "Social": {
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
+      "social": {
+        "type": "Group",
         "config": {
-          "choices": {
-            "social": {
-              "type": "SharedSlice"
+          "label": "Social",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": { "label": "Label", "placeholder": "" }
+            },
+            "a11y": {
+              "type": "Text",
+              "config": { "label": "Accesibility", "placeholder": "" }
+            },
+            "href": {
+              "type": "Link",
+              "config": { "label": "href", "placeholder": "", "select": null }
+            },
+            "show": {
+              "type": "Boolean",
+              "config": {
+                "label": "Show",
+                "default_value": false,
+                "placeholder_true": "true",
+                "placeholder_false": "false"
+              }
             }
           }
         }

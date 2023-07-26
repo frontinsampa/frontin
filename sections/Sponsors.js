@@ -1,8 +1,9 @@
 import { useAsync } from 'react-async-hook';
-import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import { PrismicRichText, PrismicLink } from '@prismicio/react';
 
 import { getListByType } from '../services/pages';
 import Image from '../components/Image';
+import Link from '../components/Link';
 
 export default function Sponsors() {
   const getList = useAsync(async () => {
@@ -29,87 +30,125 @@ export default function Sponsors() {
     platinum: sponsorshipsHighlight,
     ...sponsorships
   } = groupBySponsorshipType || { platinum: [] };
-  const sponsorshipsList = Object.values(sponsorships);
-
+  const sponsorshipsList = Object.values(sponsorships).flat();
+  console.log(sponsorshipsList)
   return (
     <div>
-      {sponsorshipsHighlight?.map(({ data: details, id }) => (
-        <div key={id}>
-          <div className="
-            grid
-            grid-cols-1
-            lg:grid-cols-[auto_1fr]
-            gap-12
-          ">
-            <div>
-              <div className="
-                sticky
-                top-4
-              ">
-                <Image
-                  field={details.logo.highlight}
-                  color="pink"
-                />
-              </div>
-            </div>
 
-            <div>
-              <PrismicRichText field={details.name} />
-
-              <div className="
-                lg:border-l-2
-                lg:border-gray
-                lg:pl-12
-              ">
-                <span className="
-                  block
-                  mb-4
+      <div
+        className={`
+          mb-10
+        `}
+      >
+        {sponsorshipsHighlight?.map(({ data: details, id }) => (
+          <div key={id}>
+            <div className="
+              grid
+              grid-cols-1
+              lg:grid-cols-[auto_1fr]
+              gap-12
+            ">
+              <div>
+                <div className="
+                  sticky
+                  top-4
                 ">
-                  <PrismicLink
-                    field={details.url}
-                      className="
-                      hover:text-blue
-                      transition
-                    "
-                  >
-                    {details.url.url}
-                  </PrismicLink>
-                </span>
+                  <Image
+                    field={details.logo}
+                    color="pink"
+                    className={`
+                      w-[470px]
+                      h-[280px]
+                    `}
+                  />
+                </div>
+              </div>
 
-                <PrismicRichText
-                  field={details.description}
-                  components={{
-                    embed: ({ node, key }) => (
-                      <>
-                        <div
-                          key={key}
-                          data-oembed={node.oembed.embed_url}
-                          data-oembed-type={node.oembed.type}
-                          data-oembed-provider={node.oembed.provider_name}
-                          dangerouslySetInnerHTML={{ __html: node.oembed.html ?? '' }}
-                          className="
-                            w-full
-                            h-[120px]
-                            lg:h-[450px]
-                            highlight-video
-                          "
-                        />
+              <div>
+                <PrismicRichText field={details.name} />
 
-                        <style jsx="true">{`
-                          iframe {
-                            width: 100%;
-                            height: 100%;
-                          }
-                        `}</style>
-                      </>
-                    ),
-                  }}
-                />
+                <div className="
+                  lg:border-l-2
+                  lg:border-gray
+                  lg:pl-12
+                ">
+                  <span className="
+                    block
+                    mb-4
+                  ">
+                    <PrismicLink
+                      field={details.url}
+                        className="
+                        hover:text-blue
+                        transition
+                      "
+                    >
+                      {details.url.url}
+                    </PrismicLink>
+                  </span>
+
+                  <PrismicRichText
+                    field={details.description}
+                    components={{
+                      embed: ({ node, key }) => (
+                        <>
+                          <div
+                            key={key}
+                            data-oembed={node.oembed.embed_url}
+                            data-oembed-type={node.oembed.type}
+                            data-oembed-provider={node.oembed.provider_name}
+                            dangerouslySetInnerHTML={{ __html: node.oembed.html ?? '' }}
+                            className="
+                              w-full
+                              h-[120px]
+                              lg:h-[450px]
+                              highlight-video
+                            "
+                          />
+
+                          <style jsx="true">{`
+                            iframe {
+                              width: 100%;
+                              height: 100%;
+                            }
+                          `}</style>
+                        </>
+                      ),
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
+        ))}
+      </div>
+
+      <div>
+        <div
+          className={`
+            flex
+            gap-4
+          `}
+        >
+          {sponsorshipsList?.map(({ data: details }, i) => (
+            <div key={i}>
+              <Link
+                href={details.url}
+              >
+                <Image
+                  field={details.logo}
+                  color="blue"
+                  fill
+                  className={`
+                    w-[100px]
+                    h-[100px]
+                  `}
+                />
+              </Link>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   )
 }

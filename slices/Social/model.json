@@ -14,47 +14,15 @@
       "items": {
         "name": {
           "type": "Text",
-          "config": {
-            "label": "Name",
-            "placeholder": ""
-          }
-        },
-        "sr_description": {
-          "type": "Text",
-          "config": {
-            "label": "Description",
-            "placeholder": ""
-          }
-        },
-        "icon_light": {
-          "type": "Image",
-          "config": {
-            "label": "Icon Light",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "logo_dark": {
-          "type": "Image",
-          "config": {
-            "label": "Logo Dark",
-            "constraint": {},
-            "thumbnails": [
-              {
-                "name": "small",
-                "width": 32,
-                "height": 32
-              }
-            ]
-          }
+          "config": { "label": "Name", "placeholder": "" }
         },
         "link": {
           "type": "Link",
-          "config": {
-            "label": "Link",
-            "placeholder": "",
-            "select": null
-          }
+          "config": { "label": "Link", "placeholder": "", "select": null }
+        },
+        "a11y": {
+          "type": "Text",
+          "config": { "label": "Acessibility", "placeholder": "" }
         },
         "active": {
           "type": "Boolean",
