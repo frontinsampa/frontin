@@ -9,6 +9,7 @@ function getSocialIconByLabel(label) {
     youtube: dynamic(() => import('../icons/Youtube.svg')),
     instagram: dynamic(() => import('../icons/Instagram.svg')),
     website: dynamic(() => import('../icons/Website.svg')),
+    discord: dynamic(() => import('../icons/Discord.svg')),
   };
 
   const key = label
