@@ -18,6 +18,8 @@ export default function Partner() {
     return null;
   }
 
+  console.log(list)
+
   return (
     <div>
       <div
@@ -30,7 +32,7 @@ export default function Partner() {
         {list?.map(({ data: details }, i) => (
           <div key={i}>
             <Link
-              href={details.url}
+              href={details.link}
               title={details.name}
             >
               <Image
